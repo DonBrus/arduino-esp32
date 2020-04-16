@@ -25,6 +25,14 @@
 #include "WiFi.h"
 #include "WiFiGeneric.h"
 #include "WiFiAP.h"
+#include <tcpip_adapter.h>
+
+#ifndef tcpip_adapter_option_mode_t
+typedef tcpip_adapter_dhcp_option_mode_t tcpip_adapter_option_mode_t;
+#endif
+#ifndef tcpip_adapter_option_id_t
+typedef tcpip_adapter_dhcp_option_id_t tcpip_adapter_option_id_t;
+#endif
 
 extern "C" {
 #include <stdint.h>
@@ -38,6 +46,7 @@ extern "C" {
 #include <esp_event_loop.h>
 #include <lwip/ip_addr.h>
 #include "dhcpserver/dhcpserver_options.h"
+
 }
 
 
